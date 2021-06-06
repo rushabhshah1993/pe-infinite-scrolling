@@ -1,0 +1,49 @@
+{
+  "name": "pe-infinite-scrolling",
+  "version": "1.0.0",
+  "description": "An app for infinite scrolling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rushabhshah1993/pe-infinite-scrolling.git"
+  },
+  "keywords": [
+    "infinite",
+    "scrolling"
+  ],
+  "author": "Rushabh Mulraj Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rushabhshah1993/pe-infinite-scrolling/issues"
+  },
+  "homepage": "https://github.com/rushabhshah1993/pe-infinite-scrolling#readme",
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "sass-loader": "^12.0.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "path": "^0.12.7"
+  }
+}
