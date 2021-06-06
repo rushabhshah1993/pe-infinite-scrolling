@@ -8,10 +8,14 @@ import Login from './../Login/Login';
 import {
     checkUserLogin
 } from './../../store/actions/userActions';
+import {
+    fetchConnections
+} from './../../store/actions/connectionActions';
 
 const Main = props => {
     useEffect(() => {
         props.checkUserLogin();
+        props.fetchConnections(1);
     }, [])
 
     return (
@@ -51,7 +55,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        checkUserLogin: () => dispatch(checkUserLogin())
+        checkUserLogin: () => dispatch(checkUserLogin()),
+        fetchConnections: pageNo => dispatch(fetchConnections(pageNo))
     }
 }
 

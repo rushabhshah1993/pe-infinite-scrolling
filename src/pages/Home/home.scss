@@ -1,0 +1,48 @@
+@import './../../utilities/scss/variables';
+
+.cardContainer {
+    .card {
+        display: flex;
+        border: 1px solid #EAEAEA;
+        padding: 8px;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        border-radius: 8px;
+
+        .imgContainer {
+            .userThumbnail {
+                border-radius: 50%;
+            }
+        }
+
+        .userInfoContainer {
+            display: flex;
+            
+            .nameLocation {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: left;
+                border-right: 1px solid #EAEAEA;
+                padding-right: 8px;
+                margin-right: 8px;
+                
+                .userName {
+                    font-size: 1.5rem;
+                    color: $text-color;
+                }
+    
+                .userLocation {
+                    color: $disabled-background;
+                }
+            }
+
+            .otherInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+        }
+    }
+}
