@@ -1,34 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router';
+import { connect } from 'react-redux';
 
-import Navbar from './../../components/Navbar/Navbar';
 import Home from './../Home/Home';
 import Login from './../Login/Login';
 
-const Main = () => {
-    const [userLoggedIn, setUserLoginStatus] = useState(false);
+import {
+    checkUserLogin
+} from './../../store/actions/userActions';
 
+const Main = props => {
     useEffect(() => {
-        let userInfo = localStorage.getItem('user');
-        setUserLoginStatus(!!userInfo);
+        props.checkUserLogin();
     }, [])
 
     return (
-        <div>
-            <Navbar />
+        <div> 
             <Switch>
-                <Route path={'/login'} exact component={Login} />
                 <Route path={'/'} exact>
                     {
-                        userLoggedIn ?
+                        props.user.isLoggedIn ?
                         <Redirect to={'/home'} /> :
                         <Login />
                     }
                 </Route>
                 <Route path={'/home'} exact>
                     {
-                        userLoggedIn ?
+                        props.user.isLoggedIn ?
                         <Home /> :
+                        <Redirect to={'/login'} />
+                    }
+                </Route>
+                <Route path={'/login'} exact>
+                    {
+                        props.user.isLoggedIn ?
+                        <Redirect to={'/home'} /> :
                         <Redirect to={'/login'} />
                     }
                 </Route>
@@ -37,4 +43,16 @@ const Main = () => {
     )
 }
 
-export default Main;
+const mapStateToProps = state => {
+    return {
+        user: state.user
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        checkUserLogin: () => dispatch(checkUserLogin())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

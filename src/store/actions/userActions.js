@@ -6,3 +6,38 @@ export const setUserLoginStatus = status => {
         status: status
     }
 }
+
+export const login = (username, password) => {
+    return dispatch => {
+        if(username === 'foo' && password === 'bar') {
+            let user = {
+                username: 'foo',
+                firstName: 'John',
+                lastName: 'Doe'
+            };
+            localStorage.setItem('user', JSON.stringify(user));
+            dispatch(loginSuccess(user));
+        } else {
+            dispatch(loginFail());
+        }
+    }
+}
+
+export const loginSuccess = user => {
+    return { 
+        type: actions.LOGIN_SUCCESS,
+        user: user
+    }
+}
+
+export const loginFail = () => {
+    return { type: actions.LOGIN_FAIL }
+}
+
+export const checkUserLogin = () => {
+    let userInfo = !!localStorage.getItem('user'); 
+    return dispatch => {
+        dispatch(setUserLoginStatus(userInfo));
+    }
+    
+}

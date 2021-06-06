@@ -1,4 +1,10 @@
+@import './../../utilities/scss/mixins';
+
 .navbarContainer {
     display: flex;
     justify-content: space-between;
+
+    @include for-phone-only {
+        display: none;
+    }
 }
