@@ -11,12 +11,15 @@
     padding: 1rem;
     border-bottom: 1px solid #EAEAEA;
 
-    @include for-phone-only {
-        display: none;
+    .brandContainer p {
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
     }
 
     .actionContainer {
         display: flex;
+        font-weight: 300;;
 
         .userInfo {
             margin-right: 8px;

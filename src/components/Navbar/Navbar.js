@@ -8,11 +8,7 @@ import {
     logout
 } from './../../store/actions/userActions';
 
-import { fetchGreeting } from './../../utilities/js/simpleUtilities';
-
 const Navbar = props => {
-    let greeting = <span>{fetchGreeting()}, </span>;
-
     return (
         <div className={styles.navbarContainer}>
             <div className={styles.brandContainer}>
@@ -20,7 +16,7 @@ const Navbar = props => {
             </div>
             <div className={styles.actionContainer}>
                 <p className={styles.userInfo}>
-                    {greeting}
+                    <FontAwesomeIcon icon="user-circle" />
                     {props.user.user.firstName} {props.user.user.lastName}
                 </p>
                 <p 
