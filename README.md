@@ -27,4 +27,4 @@ For folks cloning this project, type the following commands after opening the in
 This section shows you snapshots of the live application.
 
 ### Mobile
-![Connect Club - Mobile - Home](/readme-images/Connect Club - Home Page (Mobile).png)
+![Connect Club - Mobile - Home](readme-images/ConnectClub-HomePage-Mobile.png)
