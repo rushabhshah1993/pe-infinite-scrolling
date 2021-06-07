@@ -23,6 +23,11 @@ const reducer = (state=initialState, action) => {
             clonedState.isLoggedIn = false;
             clonedState.loginError = 'Incorrect username/password';
             return clonedState;
+        case actions.LOGOUT:
+            clonedState.user = {};
+            clonedState.isLoggedIn = false;
+            clonedState.loginError = null;
+            return clonedState;
         default: return state;
     }
 }

@@ -38,6 +38,12 @@ export const checkUserLogin = () => {
     let userInfo = !!localStorage.getItem('user'); 
     return dispatch => {
         dispatch(setUserLoginStatus(userInfo));
+    }   
+}
+
+export const logout = () => {
+    localStorage.removeItem('user');
+    return {
+        type: actions.LOGOUT
     }
-    
 }

@@ -7,4 +7,10 @@
     @include for-phone-only {
         display: none;
     }
+
+    .actionContainer {
+        .logoutBtn {
+            cursor: pointer;
+        }
+    }
 }
