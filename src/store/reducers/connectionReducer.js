@@ -3,19 +3,23 @@ import * as actions from './../actions/actionTypes';
 import { cloneDeep } from 'lodash';
 
 const initialState = {
-    connections: []
+    list: [],
+    currentPage: 1
 }
 
 const reducer = (state=initialState, action) => {
     let clonedState = cloneDeep(state);
     switch(action.type) {
         case actions.LIST_CONNECTIONS:
-            if(clonedState.connections.length === 0) {
-                clonedState.connections = action.list;
+            console.log("Reducer:  ", action.payload.pageNo);
+            if(clonedState.list.length === 0) {
+                clonedState.list = action.payload.list;
             } else {
-                clonedState.connections.push(...actions.list);
-                console.log(clonedState);
+                let newList = [...clonedState.list, ...action.payload.list];
+                clonedState.list = newList;
             }
+            clonedState.currentPage = action.payload.pageNo;
+            console.log("Reducer:  ", clonedState);
             return clonedState;
         default: return state;
     }
