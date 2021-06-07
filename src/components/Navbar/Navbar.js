@@ -14,18 +14,21 @@ const Navbar = props => {
             <div className={styles.brandContainer}>
                 <p>Connect Club</p>
             </div>
-            <div className={styles.actionContainer}>
-                <p className={styles.userInfo}>
-                    <FontAwesomeIcon icon="user-circle" />
-                    {props.user.user.firstName} {props.user.user.lastName}
-                </p>
-                <p 
-                    className={styles.logoutBtn}
-                    onClick={props.onLogout}>
-                        <FontAwesomeIcon icon="sign-out-alt" />
-                        <span className={styles.logoutText}>Logout</span>
-                </p>
-            </div>
+            {
+                props.user.isLoggedIn &&
+                <div className={styles.actionContainer}>
+                    <p className={styles.userInfo}>
+                        <FontAwesomeIcon icon="user-circle" />
+                        {props.user.user.firstName} {props.user.user.lastName}
+                    </p>
+                    <p 
+                        className={styles.logoutBtn}
+                        onClick={props.onLogout}>
+                            <FontAwesomeIcon icon="sign-out-alt" />
+                            <span className={styles.logoutText}>Logout</span>
+                    </p>
+                </div>
+            }
         </div>
     )
 }

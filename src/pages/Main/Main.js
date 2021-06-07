@@ -41,7 +41,7 @@ const Main = props => {
                     {
                         props.user.isLoggedIn ?
                         <Redirect to={'/home'} /> :
-                        <Redirect to={'/login'} />
+                        <Login />
                     }
                 </Route>
             </Switch>

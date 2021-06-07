@@ -52,30 +52,35 @@ const Login = props => {
     if(activeLogin) loginClasses.push(styles.activeLoginBtn);
 
     return (
-        <div className={styles.loginContainer}>
-            <div className={styles.brandName}>Connect Club</div>
-            <div className={styles.loginBox}>
-                <div className={styles.errorMsg}>{ errorMsg}</div>
-                <div className={styles.inputContainer}>
-                    <label htmlFor="username">Username:</label>
-                    <input 
-                        type="text" 
-                        id="username" 
-                        className={styles.inputElement}
-                        value={username}
-                        onChange={userInput} />
-                </div>
-                <div className={styles.inputContainer}>
-                    <label htmlFor="password">Password:</label>
-                    <input 
-                        type="password" 
-                        id="password" 
-                        className={styles.inputElement}
-                        value={password}
-                        onChange={passwordInput} />
-                </div>
+        <div className={styles.loginWrapper}>
+            <div className={styles.welcomeImg}>
+                <img src="https://image.freepik.com/free-vector/young-people-illustration-concept_23-2148457572.jpg" />
+            </div>
+            <div className={styles.loginContainer}>
+                <div className={styles.brandName}>Connect Club</div>
+                <div className={styles.loginBox}>
+                    <div className={styles.errorMsg}>{ errorMsg}</div>
+                    <div className={styles.inputContainer}>
+                        <label htmlFor="username">Username:</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            className={styles.inputElement}
+                            value={username}
+                            onChange={userInput} />
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <label htmlFor="password">Password:</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            className={styles.inputElement}
+                            value={password}
+                            onChange={passwordInput} />
+                    </div>
 
-                <div className={loginClasses.join(' ')} onClick={loginUser}>Login</div>
+                    <div className={loginClasses.join(' ')} onClick={loginUser}>Login</div>
+                </div>
             </div>
         </div>
     )

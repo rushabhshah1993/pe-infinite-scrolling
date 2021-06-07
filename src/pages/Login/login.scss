@@ -1,6 +1,33 @@
 @import './../../utilities/scss//variables';
 @import './../../utilities/scss//mixins';
 
+.loginWrapper {
+    display: flex;
+    align-items: center;
+
+    @include for-phone-only {
+        flex-direction: column;
+    }
+
+    .welcomeImg {
+        @include for-phone-only {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+
+            @include for-phone-only {
+                width: 50%;
+            }
+        }
+}
+}
+
 .loginContainer {
     display: flex;
     flex-direction: column;
@@ -10,7 +37,13 @@
     height: 100vh;
 
     @include for-phone-only {
+        height: inherit;
+    }
+
+    @include for-phone-only {
         width: 100%;
+        padding: 0 10%;
+        box-sizing: border-box;
     }
 
     .brandName {
