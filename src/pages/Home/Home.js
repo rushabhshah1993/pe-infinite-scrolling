@@ -68,9 +68,8 @@ const Home = props => {
     })
 
     return (
-        <div>
-            <Navbar />
-            <div>
+        <div className={styles.homeContainer}>
+            <div className={styles.connectionsContainer}>
                 <p className={styles.containerTitle}>My connections</p>
                 <div className={styles.cardContainer} ref={cardContainerRef}>
                     { connections }

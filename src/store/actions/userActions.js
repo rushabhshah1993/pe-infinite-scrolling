@@ -38,6 +38,10 @@ export const checkUserLogin = () => {
     let userInfo = !!localStorage.getItem('user'); 
     return dispatch => {
         dispatch(setUserLoginStatus(userInfo));
+        if(userInfo) {
+            let userData = JSON.parse(localStorage.getItem('user'));
+            dispatch(setUserData(userData));
+        }
     }   
 }
 
@@ -45,5 +49,12 @@ export const logout = () => {
     localStorage.removeItem('user');
     return {
         type: actions.LOGOUT
+    }
+}
+
+export const setUserData = user => {
+    return {
+        type: actions.SET_USER_DATA,
+        user: user
     }
 }

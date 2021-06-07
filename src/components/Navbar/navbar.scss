@@ -1,14 +1,29 @@
+@import './../../utilities/scss/variables';
 @import './../../utilities/scss/mixins';
 
 .navbarContainer {
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: $primary-color;
+    color: $white;
+    padding: 1rem;
+    border-bottom: 1px solid #EAEAEA;
 
     @include for-phone-only {
         display: none;
     }
 
     .actionContainer {
+        display: flex;
+
+        .userInfo {
+            margin-right: 8px;
+            border-right: 1px solid $white;
+            padding-right: 8px;
+        }
+
         .logoutBtn {
             cursor: pointer;
         }

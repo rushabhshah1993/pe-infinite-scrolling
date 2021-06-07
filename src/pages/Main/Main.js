@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Home from './../Home/Home';
 import Login from './../Login/Login';
+import Navbar from './../../components/Navbar/Navbar';
 
 import {
     checkUserLogin
@@ -20,6 +21,7 @@ const Main = props => {
 
     return (
         <div> 
+            <Navbar />
             <Switch>
                 <Route path={'/'} exact>
                     {

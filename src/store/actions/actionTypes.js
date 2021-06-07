@@ -1,4 +1,5 @@
 export const SET_USER_STATUS = "SET_USER_STATUS";
+export const SET_USER_DATA = "SET_USER_DATA";
 export const LOGIN = "LOGIN";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
