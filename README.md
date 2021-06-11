@@ -1,4 +1,4 @@
-# Connect Club (Infinit Scrolling)
+# Connect Club (Infinite Scrolling)
 
 Connect Club is a fictious application to demonstrate a live example of infinite scrolling powered by React and Webpack.
 
